@@ -5,6 +5,7 @@ import taskRoutes from "./routes/tasks.js";
 import labelRoutes from "./routes/labels.js";
 import commentRoutes from "./routes/comments.js";
 import mongoose from "mongoose";
+import cors from "cors";
 
 dotenv.config();
 // Inicializē dotenv package un izveido objektu, kur būs visas ENV vērtības
@@ -12,6 +13,7 @@ dotenv.config();
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cors());
 
 app.use("/tasks", taskRoutes);
 app.use("/labels", labelRoutes);
